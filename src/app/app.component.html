@@ -245,11 +245,12 @@
       </svg>
       <h1 style="color: red">Hello, {{ title }}</h1>
       <p>Congratulations! Your bisect app is running. 🎉</p>
+      <!--<p>Congratulations! Your bisect app is broken :( 💥</p>-->
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
-        @for (item of links; track item.title) {
+        @for (item of links(); track item.title) {
           <a class="pill" [href]="item.link" target="_blank" rel="noopener">
             <span>{{ item.title }}</span>
             <svg

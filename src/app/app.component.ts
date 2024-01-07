@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Bisect Angular Test App';
-  links = [
+  links = signal([
     { title: 'Explore the Docs', link: 'https://angular.dev' },
     {
       title: 'Learn with Tutorials',
@@ -30,5 +30,5 @@ export class AppComponent {
       title: 'Angular DevTest',
       link: 'https://angular.dev/tools/devtools',
     },
-  ];
+  ]);
 }
