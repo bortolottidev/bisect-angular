@@ -19,6 +19,14 @@ export class AppComponent {
     },
     { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
     {
+      title: 'Bisect Easy',
+      link: 'https://github.com/bortolottidev/bisect-easy',
+    },
+    {
+      title: 'Bisect Angular',
+      link: 'https://github.com/bortolottidev/bisect-angular',
+    },
+    {
       title: 'Angular DevTest',
       link: 'https://angular.dev/tools/devtools',
     },
