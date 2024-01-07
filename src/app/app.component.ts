@@ -19,10 +19,6 @@ export class AppComponent {
     },
     { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
     {
-      title: 'Angular Language Service',
-      link: 'https://angular.dev/tools/language-service',
-    },
-    {
       title: 'Angular DevTest',
       link: 'https://angular.dev/tools/devtools',
     },
