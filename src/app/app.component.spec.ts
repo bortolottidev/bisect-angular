@@ -24,6 +24,16 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, bisect-angular');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, bisect-angular',
+    );
+  });
+
+  it('should render correct paragraph text', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const expectedPText = 'Congratulations! Your bisect app is running. 🎉';
+    expect(compiled.querySelector('p')?.textContent).toContain(expectedPText);
   });
 });
