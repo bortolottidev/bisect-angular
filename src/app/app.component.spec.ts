@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'bisect-angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('bisect-angular');
+    expect(app.title).toEqual('Bisect Angular Test App');
   });
 
   it('should render title', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, bisect-angular',
+      'Hello, Bisect Angular Test App',
     );
   });
 

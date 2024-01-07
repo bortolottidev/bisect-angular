@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'bisect-angular';
+  title = 'Bisect Angular Test App';
   links = [
     { title: 'Explore the Docs', link: 'https://angular.dev' },
     {
