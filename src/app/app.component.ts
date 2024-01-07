@@ -1,4 +1,11 @@
-import { Component, signal } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Signal,
+  WritableSignal,
+  computed,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,26 +16,47 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Bisect Angular Test App';
-  links = signal([
-    { title: 'Explore the Docs', link: 'https://angular.dev' },
-    {
-      title: 'Learn with Tutorials',
-      link: 'https://angular.dev/tutorials',
-    },
-    { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-    {
-      title: 'Bisect Easy',
-      link: 'https://github.com/bortolottidev/bisect-easy',
-    },
-    {
-      title: 'Bisect Angular',
-      link: 'https://github.com/bortolottidev/bisect-angular',
-    },
-    {
-      title: 'Angular DevTest',
-      link: 'https://angular.dev/tools/devtools',
-    },
-  ]);
+  links: WritableSignal<
+    Array<{ title: string; link: string; author: string }>
+  > = signal([]);
+  myLinks: Signal<Array<{ title: string; link: string }>> = computed(() =>
+    this.links().filter(({ author }) => author === 'daniele'),
+  );
+
+  ngOnInit() {
+    this.links.set([
+      {
+        title: 'Explore the Docs',
+        link: 'https://angular.dev',
+        author: 'angular devs',
+      },
+      {
+        title: 'Learn with Tutorials',
+        link: 'https://angular.dev/tutorials',
+        author: 'angular devs',
+      },
+      {
+        title: 'CLI Docs',
+        link: 'https://angular.dev/tools/cli',
+        author: 'angular devs',
+      },
+      {
+        title: 'Bisect Easy',
+        link: 'https://github.com/bortolottidev/bisect-easy',
+        author: 'daniele',
+      },
+      {
+        title: 'Bisect Angular',
+        link: 'https://github.com/bortolottidev/bisect-angular',
+        author: 'daniele',
+      },
+      {
+        title: 'Angular DevTest',
+        link: 'https://angular.dev/tools/devtools',
+        author: 'angular devs',
+      },
+    ]);
+  }
 }
