@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Link } from './link';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'Bisect Angular Test App';
-  links: WritableSignal<
-    Array<{ title: string; link: string; author: string }>
-  > = signal([]);
-  myLinks: Signal<Array<{ title: string; link: string }>> = computed(() =>
+  links: WritableSignal<Array<Link>> = signal([]);
+  myLinks: Signal<Array<Omit<Link, 'author'>>> = computed(() =>
     this.links().filter(({ author }) => author === 'daniele'),
   );
 
