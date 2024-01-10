@@ -14,7 +14,7 @@ describe('LinkService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should provice all links', () => {
+  it('should provide all links', () => {
     expect(service.getAllLinks()).toBeInstanceOf(Array);
     expect(service.getAllLinks()).toHaveSize(6);
   });
